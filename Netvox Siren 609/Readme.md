@@ -224,8 +224,8 @@ If JSON isn't working, try sending raw hex directly:
 | Mode | Description | Code |
 |------|-------------|------|
 | `none` | No LED indication | 0x00 |
-| `chase` | LED chase/flowing light | 0x01 |
-| `blink` | LED blink pattern | 0x02 |
+| `blink_1` | Chase| 0x01 |
+| `blink_2` | Blink  | 0x02 |
 
 ### Duration
 - **Range:** 0-65535 seconds
