@@ -125,7 +125,7 @@ Responses to configuration commands sent to the device.
 {
   "command": "start_warning",
   "warning_mode": "fire",
-  "strobe_mode": "blink_1",
+  "strobe_mode": "chase",
   "duration": 10
 }
 ```
@@ -136,7 +136,7 @@ Responses to configuration commands sent to the device.
 {
   "command": "start_warning",
   "warning_mode": "emergency",
-  "strobe_mode": "blink_2",
+  "strobe_mode": "blink",
   "duration": 30
 }
 ```
@@ -169,7 +169,7 @@ Responses to configuration commands sent to the device.
 {
   "command": "start_warning",
   "warning_mode": "burglar",
-  "strobe_mode": "blink_1",
+  "strobe_mode": "chase",
   "duration": 60
 }
 ```
@@ -224,8 +224,8 @@ If JSON isn't working, try sending raw hex directly:
 | Mode | Description | Code |
 |------|-------------|------|
 | `none` | No LED indication | 0x00 |
-| `blink_1` | Chase| 0x01 |
-| `blink_2` | Blink  | 0x02 |
+| `chase` | LED chase/flowing light | 0x01 |
+| `blink` | LED blink pattern | 0x02 |
 
 ### Duration
 - **Range:** 0-65535 seconds
