@@ -3,15 +3,26 @@
  * 
  * Supports JSON commands like:
  * { "relay": 1, "state": "on" }
- * { "relay": 2, "state": "off", "duration": 30 }
- * { "relay": 3, "state": "on", "duration": "5m" }
- * { "relay": 4, "state": "off", "duration": "2h" }
+ * { "relay": 2, "state": "off"}
+ * { "relay": 3, "state": "on" }
+ * { "relay": 4, "state": "off"}
  * 
  * Or arrays for multiple relays:
  * [
  *   { "relay": 1, "state": "on" },
- *   { "relay": 2, "state": "off", "duration": 30 }
+ *   { "relay": 2, "state": "off"}
  * ]
+ * 
+ * Utility commands as JSON:
+ * { "type": "reboot" }
+ * { "type": "delete_delay" }
+ * { "type": "all_off" }
+ * { "type": "all_on" }
+ * { "type": "set_interval", "value": 300 }
+ * { "type": "enable_power_monitoring" }
+ * { "type": "disable_power_monitoring" }
+ * { "type": "reset_power_consumption" }
+ * { "type": "enquire_status" }
  */
 
 function encodeDownlink(input) {
@@ -84,6 +95,22 @@ function encodeDownlink(input) {
 }
 
 function processCommand(cmd) {
+  // Utility command support
+  if (cmd && typeof cmd === 'object' && cmd.type) {
+    try {
+      // set_interval requires a value
+      if (cmd.type === 'set_interval') {
+        if (!cmd.hasOwnProperty('value')) {
+          return { error: 'set_interval command requires a value property' };
+        }
+        return createUtilityCommand(cmd.type, cmd.value);
+      }
+      return createUtilityCommand(cmd.type);
+    } catch (e) {
+      return { error: e.message };
+    }
+  }
+  
   // Validate basic structure
   if (!cmd || typeof cmd !== 'object') {
     return { error: 'Command must be an object' };
@@ -105,12 +132,12 @@ function processCommand(cmd) {
     return { error: `Invalid state: ${cmd.state}. Must be "on" or "off"` };
   }
   
-  // Check if duration is specified
+  // Only immediate commands are supported
   if (cmd.duration) {
-    return processDelayCommand(relay, state, cmd.duration);
-  } else {
-    return processImmediateCommand(relay, state);
+    return { error: 'Duration/delay commands are not supported.' };
   }
+  
+  return processImmediateCommand(relay, state);
 }
 
 function processImmediateCommand(relay, state) {
@@ -123,62 +150,6 @@ function processImmediateCommand(relay, state) {
   return {
     bytes: [0x08, controlByte, statusByte]
   };
-}
-
-function processDelayCommand(relay, state, duration) {
-  // Parse duration
-  let durationSeconds = parseDuration(duration);
-  if (durationSeconds === null) {
-    return { error: `Invalid duration format: ${duration}` };
-  }
-  
-  if (durationSeconds > 65535) {
-    return { 
-      error: `Duration too long: ${duration}. Maximum is 65535 seconds (about 18.2 hours)`,
-    };
-  }
-  
-  // WS558 supports only one delay task at a time
-  // Format: ff 32 00 [delay_low] [delay_high] [control_byte] [status_byte]
-  
-  let delayLow = durationSeconds & 0xFF;
-  let delayHigh = (durationSeconds >> 8) & 0xFF;
-  let controlByte = 1 << (relay - 1); // Enable control for this relay
-  let statusByte = state === 'on' ? (1 << (relay - 1)) : 0; // Set state
-  
-  return {
-    bytes: [0xFF, 0x32, 0x00, delayLow, delayHigh, controlByte, statusByte],
-    warning: 'WS558 supports only one delay task at a time. Later commands will override previous delay tasks.'
-  };
-}
-
-function parseDuration(duration) {
-  if (typeof duration === 'number') {
-    return duration; // Assume seconds
-  }
-  
-  if (typeof duration === 'string') {
-    let match = duration.match(/^(\d+)([smh]?)$/);
-    if (!match) {
-      return null;
-    }
-    
-    let value = parseInt(match[1]);
-    let unit = match[2] || 's';
-    
-    switch (unit) {
-      case 's':
-        return value;
-      case 'm':
-        return value * 60;
-      case 'h':
-        return value * 3600;
-      default:
-        return null;
-    }
-  }
-  
-  return null;
 }
 
 // Helper function to create common commands

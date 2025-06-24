@@ -6,102 +6,116 @@ This directory contains the TTN v3 encoder/decoder for the Milesight WS558 Smart
 
 ### Downlink (encodeDownlink)
 
-Send commands to control relays, optionally with a duration (delay). The encoder supports several input formats:
+Send commands to control relays or device utilities. The encoder supports several input formats, but the most compatible and recommended way is to wrap all commands in a `commands` array:
 
 #### Single Relay Command
 ```json
 {
-  "relay": 1,
-  "state": "on"
-}
-```
-
-#### Relay Command with Duration (e.g., 10 seconds)
-```json
-{
-  "relay": 1,
-  "state": "on",
-  "duration": 10
-}
-```
-Or as a string:
-```json
-{
-  "relay": 1,
-  "state": "on",
-  "duration": "10s"
+  "commands": [
+    { "relay": 1, "state": "on" }
+  ]
 }
 ```
 
 #### Multiple Relays (Array)
 ```json
-[
-  { "relay": 1, "state": "on" },
-  { "relay": 2, "state": "off", "duration": 30 }
-]
-```
-
-#### Wrapped in `commands` property (for TTN)
-```json
 {
   "commands": [
     { "relay": 1, "state": "on" },
-    { "relay": 2, "state": "off", "duration": 30 }
+    { "relay": 2, "state": "off" }
   ]
 }
 ```
 
-### Utility/Device Commands
-Use the `createUtilityCommand(type, value)` helper in custom integrations:
-
-- **Reboot:** `{ bytes: [0xFF, 0x10, 0xFF] }`
-- **Delete Delay Task:** `{ bytes: [0xFF, 0x23, 0x00, 0xFF] }`
-- **All Relays OFF:** `{ bytes: [0x08, 0xFF, 0x00] }`
-- **All Relays ON:** `{ bytes: [0x08, 0xFF, 0xFF] }`
-- **Set Reporting Interval:** `createUtilityCommand('set_interval', 300)` (interval in seconds, 60–64800)
-- **Enable Power Monitoring:** `{ bytes: [0xFF, 0x26, 0x01] }`
-- **Disable Power Monitoring:** `{ bytes: [0xFF, 0x26, 0x00] }`
-- **Reset Power Consumption:** `{ bytes: [0xFF, 0x27, 0xFF] }`
-- **Enquire Status:** `{ bytes: [0xFF, 0x28, 0xFF] }`
-
-### Duration/Delay Nuances
-- **Only one delay task at a time!** If you send multiple commands with `duration`, only the last one will be active. The device will override previous delay tasks.
-- **Duration units:**
-  - Number: seconds (e.g., `10` = 10 seconds)
-  - String: supports `s` (seconds), `m` (minutes), `h` (hours). E.g., `"5m"` = 5 minutes, `"2h"` = 2 hours.
-  - Max duration: 65535 seconds (~18.2 hours)
-- **Immediate commands** (no duration) can be sent for multiple relays at once.
-
-### Uplink (decodeUplink)
-The decoder parses incoming payloads and extracts:
-- Protocol, hardware, software version
-- Power monitoring status
-- Relay states
-- Voltage, current, power, power factor, power consumption
-- Device SN, device class, etc.
-
-### Example TTN Downlink Payloads
-- **Turn relay 1 ON for 10 seconds:**
+#### Utility/Device Commands (as JSON in `commands` array)
+- **Reboot:**
   ```json
-  { "relay": 1, "state": "on", "duration": 10 }
+  {
+    "commands": [
+      { "type": "reboot" }
+    ]
+  }
   ```
-- **Turn relay 2 OFF immediately:**
+- **Delete Delay Task:**
   ```json
-  { "relay": 2, "state": "off" }
+  {
+    "commands": [
+      { "type": "delete_delay" }
+    ]
+  }
   ```
-- **Turn all relays ON:**
+- **All Relays OFF:**
   ```json
-  { "relay": 1, "state": "on" }
-  { "relay": 2, "state": "on" }
-  ...
-  { "relay": 8, "state": "on" }
+  {
+    "commands": [
+      { "type": "all_off" }
+    ]
+  }
   ```
-  Or use the utility command: `[0x08, 0xFF, 0xFF]`
+- **All Relays ON:**
+  ```json
+  {
+    "commands": [
+      { "type": "all_on" }
+    ]
+  }
+  ```
+- **Set Reporting Interval:**
+  ```json
+  {
+    "commands": [
+      { "type": "set_interval", "value": 300 }
+    ]
+  }
+  ```
+- **Enable Power Monitoring:**
+  ```json
+  {
+    "commands": [
+      { "type": "enable_power_monitoring" }
+    ]
+  }
+  ```
+- **Disable Power Monitoring:**
+  ```json
+  {
+    "commands": [
+      { "type": "disable_power_monitoring" }
+    ]
+  }
+  ```
+- **Reset Power Consumption:**
+  ```json
+  {
+    "commands": [
+      { "type": "reset_power_consumption" }
+    ]
+  }
+  ```
+- **Enquire Status:**
+  ```json
+  {
+    "commands": [
+      { "type": "enquire_status" }
+    ]
+  }
+  ```
 
-### Quirks & Gotchas
-- **One delay at a time:** Only the last delay command is active.
+#### Mixing Relay and Utility Commands
+```json
+{
+  "commands": [
+    { "relay": 1, "state": "on" },
+    { "type": "all_off" },
+    { "type": "set_interval", "value": 600 }
+  ]
+}
+```
+
+### Command Nuances
+- **Immediate commands only:** Duration/delay is not supported. Each command turns a relay on or off immediately.
 - **Relay numbers:** 1–8 only.
-- **State:** Must be `"on"` or `"off"` (case-insensitive).
+- **State:** Must be "on" or "off" (case-insensitive).
 - **Invalid input:** The encoder will throw errors for bad formats, relay numbers, or states.
 - **fPort:** Downlinks use `fPort: 85` by default.
 
