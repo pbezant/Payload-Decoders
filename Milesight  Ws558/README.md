@@ -6,9 +6,12 @@ This directory contains the TTN v3 encoder/decoder for the Milesight WS558 Smart
 
 ### Downlink (encodeDownlink)
 
-Send commands to control relays or device utilities. The encoder supports several input formats, but the most compatible and recommended way is to wrap all commands in a `commands` array:
+Send commands to control relays or device utilities. The encoder supports several input formats:
 
-#### Single Relay Command
+#### Recommended Format: `commands` Array (Most Compatible)
+The most compatible and recommended way is to wrap all commands in a `commands` array:
+
+##### Single Relay Command
 ```json
 {
   "commands": [
@@ -17,7 +20,7 @@ Send commands to control relays or device utilities. The encoder supports severa
 }
 ```
 
-#### Multiple Relays (Array)
+##### Multiple Relays (Array)
 ```json
 {
   "commands": [
@@ -25,6 +28,25 @@ Send commands to control relays or device utilities. The encoder supports severa
     { "relay": 2, "state": "off" }
   ]
 }
+```
+
+#### Alternative Formats (Also Supported)
+
+##### Direct Array Format
+```json
+[
+  { "relay": 1, "state": "on" },
+  { "relay": 2, "state": "off" }
+]
+```
+
+##### Single Command Object
+```json
+{ "relay": 1, "state": "on" }
+```
+or
+```json
+{ "type": "reboot" }
 ```
 
 #### Utility/Device Commands (as JSON in `commands` array)
@@ -113,6 +135,7 @@ Send commands to control relays or device utilities. The encoder supports severa
 ```
 
 ### Command Nuances
+- **Format Flexibility:** The encoder supports multiple input formats, but the `"commands"` array is most compatible with TTN integrations.
 - **Immediate commands only:** Duration/delay is not supported. Each command turns a relay on or off immediately.
 - **Relay numbers:** 1–8 only.
 - **State:** Must be "on" or "off" (case-insensitive).

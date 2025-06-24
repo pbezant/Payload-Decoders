@@ -303,6 +303,17 @@ function decodeUplink(input) {
   };
 }
 
+// TTN v3 Downlink Decoder function (rarely used, but TTN might expect it)
+function decodeDownlink(input) {
+  // For most devices, downlink decoding isn't needed
+  // Just return the bytes as hex string for debugging
+  return {
+    data: {
+      bytes_hex: input.bytes.map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')
+    }
+  };
+}
+
 // Functions are automatically available to TTN v3
 // No exports needed - TTN will call encodeDownlink() and decodeUplink() directly
 
