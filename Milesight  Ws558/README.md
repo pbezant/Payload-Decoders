@@ -34,7 +34,7 @@ The most compatible and recommended way is to wrap all commands in a `commands` 
 {
   "commands": [
     { "relay": 1, "state": "on" },
-    { "relay": 2, "state": "off", "duration": 120 }
+    { "relay": 1, "state": "off", "duration": 5 }
   ]
 }
 ```

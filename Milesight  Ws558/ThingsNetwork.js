@@ -10,6 +10,7 @@
  * Duration commands (NEW!):
  * { "relay": 1, "state": "on", "duration": 300 }   // Turn on for 5 minutes
  * { "relay": 2, "state": "off", "duration": 60 }   // Turn off for 1 minute
+ * Uses utility command format: FF 22 [relay_state] [duration_low] [duration_high]
  * 
  * Or arrays for multiple relays:
  * [
@@ -162,18 +163,18 @@ function processImmediateCommand(relay, state) {
 }
 
 function processDurationCommand(relay, state, duration) {
-  // Create duration switch control command
-  // Format: 09 [control_byte] [status_byte] [duration_low] [duration_high]
-  
-  let controlByte = 1 << (relay - 1); // Enable control for this relay
-  let statusByte = state === 'on' ? (1 << (relay - 1)) : 0; // Set state
-  
-  // Split duration into low and high bytes
+  // Create delay task command per WS558 user guide
+  // Format: FF 32 00 [delay_low] [delay_high] [control_byte] [status_byte]
+  // control_byte: 1 << (relay-1)
+  // status_byte: 1 << (relay-1) if ON, 0 if OFF
+
+  let controlByte = 1 << (relay - 1);
+  let statusByte = state === 'on' ? (1 << (relay - 1)) : 0;
   let durationLow = duration & 0xFF;
   let durationHigh = (duration >> 8) & 0xFF;
-  
+
   return {
-    bytes: [0x09, controlByte, statusByte, durationLow, durationHigh]
+    bytes: [0xFF, 0x32, 0x00, durationLow, durationHigh, controlByte, statusByte]
   };
 }
 
