@@ -7,10 +7,14 @@
  * { "relay": 3, "state": "on" }
  * { "relay": 4, "state": "off"}
  * 
+ * Duration commands (NEW!):
+ * { "relay": 1, "state": "on", "duration": 300 }   // Turn on for 5 minutes
+ * { "relay": 2, "state": "off", "duration": 60 }   // Turn off for 1 minute
+ * 
  * Or arrays for multiple relays:
  * [
  *   { "relay": 1, "state": "on" },
- *   { "relay": 2, "state": "off"}
+ *   { "relay": 2, "state": "off", "duration": 120 }
  * ]
  * 
  * Utility commands as JSON:
@@ -132,9 +136,14 @@ function processCommand(cmd) {
     return { error: `Invalid state: ${cmd.state}. Must be "on" or "off"` };
   }
   
-  // Only immediate commands are supported
-  if (cmd.duration) {
-    return { error: 'Duration/delay commands are not supported.' };
+  // Check if duration is specified
+  if (cmd.duration !== undefined) {
+    // Validate duration
+    let duration = parseInt(cmd.duration);
+    if (isNaN(duration) || duration < 1 || duration > 65535) {
+      return { error: `Invalid duration: ${cmd.duration}. Must be 1-65535 seconds` };
+    }
+    return processDurationCommand(relay, state, duration);
   }
   
   return processImmediateCommand(relay, state);
@@ -149,6 +158,22 @@ function processImmediateCommand(relay, state) {
   
   return {
     bytes: [0x08, controlByte, statusByte]
+  };
+}
+
+function processDurationCommand(relay, state, duration) {
+  // Create duration switch control command
+  // Format: 09 [control_byte] [status_byte] [duration_low] [duration_high]
+  
+  let controlByte = 1 << (relay - 1); // Enable control for this relay
+  let statusByte = state === 'on' ? (1 << (relay - 1)) : 0; // Set state
+  
+  // Split duration into low and high bytes
+  let durationLow = duration & 0xFF;
+  let durationHigh = (duration >> 8) & 0xFF;
+  
+  return {
+    bytes: [0x09, controlByte, statusByte, durationLow, durationHigh]
   };
 }
 

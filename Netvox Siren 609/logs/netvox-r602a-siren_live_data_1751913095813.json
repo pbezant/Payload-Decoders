@@ -1,0 +1,2810 @@
+[
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:17:21.354675635Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAIwAHNwmVcl6m7RpHXMd3v+4=",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "x3e/7g==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 35
+          },
+          "f_port": 7,
+          "frm_payload": "NwmVcl6m7RpHXA==",
+          "full_f_cnt": 35
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK54HKH69NDBTY7M1M5JEB6",
+        "ns:transmission:01JZK54HTAF8W5MJXBF6TJCN8P",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:99df55f9-e263-4de7-a128-c73fb932d669"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK54HKH69NDBTY7M1M5JEB6",
+      "ns:transmission:01JZK54HTAF8W5MJXBF6TJCN8P",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:99df55f9-e263-4de7-a128-c73fb932d669"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK54HTA5X8J403W2507YED0"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:17:21.141111237Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kWkAAAAAAAAAAA==",
+      "decoded_payload": {
+        "command": "stop_warning",
+        "command_id": 145,
+        "command_id_hex": "0x91",
+        "device_model": "R602A",
+        "device_type": 105,
+        "device_type_hex": "0x69",
+        "fPort": 7,
+        "raw_payload": "91690000000000000000",
+        "reserved_bytes": "0000000000000000"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK54HKH69NDBTY7M1M5JEB6",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:99df55f9-e263-4de7-a128-c73fb932d669"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK54HKH69NDBTY7M1M5JEB6",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:99df55f9-e263-4de7-a128-c73fb932d669"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "5KBEZUP3V6JFSEER7KI36N6F5CJWGZR5NC36XFY"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK54HKN9XMZ58ZD68RYHCYE"
+  },
+  {
+    "time": "2025-07-07T19:14:52.720Z",
+    "name": "synthetic.status.reconnected",
+    "isError": false,
+    "isSynthetic": true,
+    "unique_id": "synthetic.1751915692720"
+  },
+  {
+    "time": "2025-07-07T19:14:46.248Z",
+    "name": "synthetic.status.closed",
+    "isError": false,
+    "isSynthetic": true,
+    "unique_id": "synthetic.1751915686248"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:08:50.517794363Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAIgAHoUMq7gta56A+ExfaP5I1",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "2j+SNQ==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 34
+          },
+          "f_port": 7,
+          "frm_payload": "oUMq7gta56A+Exc=",
+          "full_f_cnt": 34
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4MYQTWVGGA5K3MWVS7TQT",
+        "ns:transmission:01JZK4MYYNT0PMDWN9WB5GRM6J",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8c1adf91-5d8d-4825-bc17-fb824f4e4e58"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4MYQTWVGGA5K3MWVS7TQT",
+      "ns:transmission:01JZK4MYYNT0PMDWN9WB5GRM6J",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8c1adf91-5d8d-4825-bc17-fb824f4e4e58"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK4MYYN7QCX1C24XZ46G4JC"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:08:50.301675987Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkCAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "command_id": 144,
+        "command_id_hex": "0x90",
+        "device_model": "R602A",
+        "device_type": 105,
+        "device_type_hex": "0x69",
+        "duration": 10,
+        "fPort": 7,
+        "raw_payload": "90690201000A0000000000",
+        "reserved_bytes": "0000000000",
+        "strobe_mode": "chase",
+        "strobe_mode_code": 1,
+        "warning_mode": "burglar",
+        "warning_mode_code": 2
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4MYQTWVGGA5K3MWVS7TQT",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8c1adf91-5d8d-4825-bc17-fb824f4e4e58"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4MYQTWVGGA5K3MWVS7TQT",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8c1adf91-5d8d-4825-bc17-fb824f4e4e58"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK4MYQXR04WW7PP4J05NMQ5"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:08:13.685747631Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAIQAHG+wJkVQRyzxNmsTC/IZP",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "wvyGTw==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 33
+          },
+          "f_port": 7,
+          "frm_payload": "G+wJkVQRyzxNmsQ=",
+          "full_f_cnt": 33
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4KTS2KG9ZVV5PNF8HNETM",
+        "ns:transmission:01JZK4KTZNVPHW0QB9GVADWES0",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:7aa6a371-ecd1-4ae1-bc87-843f6173184e"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4KTS2KG9ZVV5PNF8HNETM",
+      "ns:transmission:01JZK4KTZNVPHW0QB9GVADWES0",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:7aa6a371-ecd1-4ae1-bc87-843f6173184e"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK4KTZNYRRRBHY9711AS5EE"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:08:13.479014100Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkCAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "command_id": 144,
+        "command_id_hex": "0x90",
+        "device_model": "R602A",
+        "device_type": 105,
+        "device_type_hex": "0x69",
+        "duration": 10,
+        "fPort": 7,
+        "raw_payload": "90690201000A0000000000",
+        "reserved_bytes": "0000000000",
+        "strobe_mode": "chase",
+        "strobe_mode_code": 1,
+        "warning_mode": "burglar",
+        "warning_mode_code": 2
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4KTS2KG9ZVV5PNF8HNETM",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:7aa6a371-ecd1-4ae1-bc87-843f6173184e"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4KTS2KG9ZVV5PNF8HNETM",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:7aa6a371-ecd1-4ae1-bc87-843f6173184e"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK4KTS7P4P2B5B3J6N3M0Y2"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:07:51.429993740Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAIAAHKeiCJIeIXYc765oSQOVv",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "EkDlbw==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 32
+          },
+          "f_port": 7,
+          "frm_payload": "KeiCJIeIXYc765o=",
+          "full_f_cnt": 32
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4K51CFC1VJMFMNR64E6Z3",
+        "ns:transmission:01JZK4K585RB41Y1XFJMZYRV17",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:c9ece5f5-2633-43eb-a6e4-c75266a10dbd"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4K51CFC1VJMFMNR64E6Z3",
+      "ns:transmission:01JZK4K585RB41Y1XFJMZYRV17",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:c9ece5f5-2633-43eb-a6e4-c75266a10dbd"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK4K58535F25FDNNM9V0YPB"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:07:51.215729213Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkCAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "command_id": 144,
+        "command_id_hex": "0x90",
+        "device_model": "R602A",
+        "device_type": 105,
+        "device_type_hex": "0x69",
+        "duration": 10,
+        "fPort": 7,
+        "raw_payload": "90690201000A0000000000",
+        "reserved_bytes": "0000000000",
+        "strobe_mode": "chase",
+        "strobe_mode_code": 1,
+        "warning_mode": "burglar",
+        "warning_mode_code": 2
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4K51CFC1VJMFMNR64E6Z3",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:c9ece5f5-2633-43eb-a6e4-c75266a10dbd"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4K51CFC1VJMFMNR64E6Z3",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:c9ece5f5-2633-43eb-a6e4-c75266a10dbd"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK4K51FHSW2Q70A1W3WJZRJ"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:07:25.071001862Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAHwAHNKNyoha5DsBw4Qsrd+VC",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "K3flQg==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 31
+          },
+          "f_port": 7,
+          "frm_payload": "NKNyoha5DsBw4Qs=",
+          "full_f_cnt": 31
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4JB9SZNM1BZH73G8RP5Z6",
+        "ns:transmission:01JZK4JBGEWFJGX21SN2YZ8GYC",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3f72f07f-234b-4cc3-ab87-1265aaf4d033"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4JB9SZNM1BZH73G8RP5Z6",
+      "ns:transmission:01JZK4JBGEWFJGX21SN2YZ8GYC",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3f72f07f-234b-4cc3-ab87-1265aaf4d033"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK4JBGFY0TFWQVRA7RT0QYA"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:07:24.861051712Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkCAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "command_id": 144,
+        "command_id_hex": "0x90",
+        "device_model": "R602A",
+        "device_type": 105,
+        "device_type_hex": "0x69",
+        "duration": 10,
+        "fPort": 7,
+        "raw_payload": "90690201000A0000000000",
+        "reserved_bytes": "0000000000",
+        "strobe_mode": "chase",
+        "strobe_mode_code": 1,
+        "warning_mode": "burglar",
+        "warning_mode_code": 2
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4JB9SZNM1BZH73G8RP5Z6",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3f72f07f-234b-4cc3-ab87-1265aaf4d033"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4JB9SZNM1BZH73G8RP5Z6",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3f72f07f-234b-4cc3-ab87-1265aaf4d033"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK4JB9XP7MJDPQRRG8J3ZE1"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:06:42.993417200Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAHgAHrAilCrgPf5pdwcbOIUGW",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "ziFBlg==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 30
+          },
+          "f_port": 7,
+          "frm_payload": "rAilCrgPf5pdwcY=",
+          "full_f_cnt": 30
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4H26RNGXM65SE260S6AZ9",
+        "ns:transmission:01JZK4H2DHHV29QPEJAQC1GX96",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:38100ee1-fbd1-4047-b243-ed8826337b75"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4H26RNGXM65SE260S6AZ9",
+      "ns:transmission:01JZK4H2DHHV29QPEJAQC1GX96",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:38100ee1-fbd1-4047-b243-ed8826337b75"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK4H2DHQRD7P1RNWM0GT4D2"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:06:42.780972946Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkCAQA8AAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "command_id": 144,
+        "command_id_hex": "0x90",
+        "device_model": "R602A",
+        "device_type": 105,
+        "device_type_hex": "0x69",
+        "duration": 60,
+        "fPort": 7,
+        "raw_payload": "90690201003C0000000000",
+        "reserved_bytes": "0000000000",
+        "strobe_mode": "chase",
+        "strobe_mode_code": 1,
+        "warning_mode": "burglar",
+        "warning_mode_code": 2
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK4H26RNGXM65SE260S6AZ9",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:38100ee1-fbd1-4047-b243-ed8826337b75"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK4H26RNGXM65SE260S6AZ9",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:38100ee1-fbd1-4047-b243-ed8826337b75"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK4H26WB7X9QTMRW31RZ0XS"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:01:50.441562004Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAHQAHXnRKTBniVfjDUp2bEGQd",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "mxBkHQ==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 29
+          },
+          "f_port": 7,
+          "frm_payload": "XnRKTBniVfjDUp0=",
+          "full_f_cnt": 29
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK484GHZ4B3SHWZ8AB9HJ4W",
+        "ns:transmission:01JZK484Q9QMWFCHGY1SHW72ES",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:41b21a28-d8d7-4f41-a702-0e52052a3cc8"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK484GHZ4B3SHWZ8AB9HJ4W",
+      "ns:transmission:01JZK484Q9QMWFCHGY1SHW72ES",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:41b21a28-d8d7-4f41-a702-0e52052a3cc8"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK484Q9JXN1FYYTK035G25X"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:01:50.228125050Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkCAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "burglar"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK484GHZ4B3SHWZ8AB9HJ4W",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:41b21a28-d8d7-4f41-a702-0e52052a3cc8"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK484GHZ4B3SHWZ8AB9HJ4W",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:41b21a28-d8d7-4f41-a702-0e52052a3cc8"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK484GM0PZDFHPMAJNF3FZH"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T19:00:39.388746475Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAHAAHsPUKWagQna/4PrD1r4iV",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "9a+IlQ==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 28
+          },
+          "f_port": 7,
+          "frm_payload": "sPUKWagQna/4PrA=",
+          "full_f_cnt": 28
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK45Z46ST0E6KG58MC8DGED",
+        "ns:transmission:01JZK45ZAW57KP77CJBY0DK9GJ",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6799416a-16bc-45ea-9016-6c52f2a8630f"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK45Z46ST0E6KG58MC8DGED",
+      "ns:transmission:01JZK45ZAW57KP77CJBY0DK9GJ",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6799416a-16bc-45ea-9016-6c52f2a8630f"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK45ZAWGFSTSQ1TVWF9YJBH"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T19:00:39.177222604Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkDAAAFAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 5,
+        "strobe_mode": "none",
+        "warning_mode": "doorbell"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK45Z46ST0E6KG58MC8DGED",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6799416a-16bc-45ea-9016-6c52f2a8630f"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK45Z46ST0E6KG58MC8DGED",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6799416a-16bc-45ea-9016-6c52f2a8630f"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK45Z493M7VJGXBNJFZ3CEP"
+  },
+  {
+    "name": "as.down.data.decode.fail",
+    "time": "2025-07-07T18:56:23.715180980Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ErrorDetails",
+      "namespace": "pkg/scripting/javascript",
+      "name": "script",
+      "message_format": "{message}",
+      "attributes": {
+        "message": "ReferenceError: decodeDownlink is not defined at main (<eval>:283:25(18))"
+      },
+      "correlation_id": "86e708d2e2334e7f8f9abc4e57be4475",
+      "code": 10
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK3Y5CWJXX6ZFXFJN0DAVN7",
+      "as:up:01JZK3Y5N1ZPWX2JAY5TK171CE",
+      "gs:tx_ack:01JZK3Y5MZB31C3K15ZXAA9YXB",
+      "ns:transmission:01JZK3Y5KFMKWCDDSD955D48JH",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:ef30aa0d-dab0-4622-97e9-8e0a18c0af34"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK3Y5N3D8M252TZ884RQ4W8"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:56:23.663478821Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAGwAHLAR/bs28RfDiipxEmFce",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "RJhXHg==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 27
+          },
+          "f_port": 7,
+          "frm_payload": "LAR/bs28RfDiipw=",
+          "full_f_cnt": 27
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK3Y5CWJXX6ZFXFJN0DAVN7",
+        "ns:transmission:01JZK3Y5KFMKWCDDSD955D48JH",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:ef30aa0d-dab0-4622-97e9-8e0a18c0af34"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK3Y5CWJXX6ZFXFJN0DAVN7",
+      "ns:transmission:01JZK3Y5KFMKWCDDSD955D48JH",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:ef30aa0d-dab0-4622-97e9-8e0a18c0af34"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK3Y5KFVC2NR9SST91MJ32F"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:56:23.454918085Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkDAAAFAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 5,
+        "strobe_mode": "none",
+        "warning_mode": "doorbell"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK3Y5CWJXX6ZFXFJN0DAVN7",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:ef30aa0d-dab0-4622-97e9-8e0a18c0af34"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK3Y5CWJXX6ZFXFJN0DAVN7",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:ef30aa0d-dab0-4622-97e9-8e0a18c0af34"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK3Y5CYN28GHC7VQ1CX4MMM"
+  },
+  {
+    "name": "as.down.data.decode.fail",
+    "time": "2025-07-07T18:29:25.307818087Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ErrorDetails",
+      "namespace": "pkg/scripting/javascript",
+      "name": "script",
+      "message_format": "{message}",
+      "attributes": {
+        "message": "ReferenceError: decodeDownlink is not defined at main (<eval>:283:25(18))"
+      },
+      "correlation_id": "60d3e19e37b449ef850c05607bd4f7d1",
+      "code": 10
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2CRX6MYCVM6DERN9C35Y7",
+      "as:up:01JZK2CS5TTEM9CGZ03S670X88",
+      "gs:tx_ack:01JZK2CS5QETJE2W1WBNCJ45N1",
+      "ns:transmission:01JZK2CS3W975NWE1YS09CA7SD",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:54cdf487-4c16-4682-98a0-189022a64d83"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK2CS5VF42A821GDWZDKR98"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:29:25.244808873Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAGgAHPf29mZJlCTHcxSPZaIHU",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "2WiB1A==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 26
+          },
+          "f_port": 7,
+          "frm_payload": "Pf29mZJlCTHcxSM=",
+          "full_f_cnt": 26
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK2CRX6MYCVM6DERN9C35Y7",
+        "ns:transmission:01JZK2CS3W975NWE1YS09CA7SD",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:54cdf487-4c16-4682-98a0-189022a64d83"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2CRX6MYCVM6DERN9C35Y7",
+      "ns:transmission:01JZK2CS3W975NWE1YS09CA7SD",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:54cdf487-4c16-4682-98a0-189022a64d83"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK2CS3W6AH1KWENJK5Y1N4J"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:29:25.033178216Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkEAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "fire"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK2CRX6MYCVM6DERN9C35Y7",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:54cdf487-4c16-4682-98a0-189022a64d83"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2CRX6MYCVM6DERN9C35Y7",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:54cdf487-4c16-4682-98a0-189022a64d83"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK2CRX93KYE1M4RD01FVEPX"
+  },
+  {
+    "name": "as.down.data.decode.fail",
+    "time": "2025-07-07T18:28:51.651557648Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ErrorDetails",
+      "namespace": "pkg/scripting/javascript",
+      "name": "script",
+      "message_format": "{message}",
+      "attributes": {
+        "message": "ReferenceError: decodeDownlink is not defined at main (<eval>:283:25(18))"
+      },
+      "correlation_id": "aa37e797fb0e44e9902998f94df862e1",
+      "code": 10
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2BR1SPKR5P49SB97YNSSX",
+      "as:up:01JZK2BRA1ZJMF8X6V6VTJV475",
+      "gs:tx_ack:01JZK2BR9ZZMRYXDNMMSR17YMQ",
+      "ns:transmission:01JZK2BR8GHG0BE6SPN7KF6G8T",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:60783683-f0d5-40d1-8533-677891e09540"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK2BRA3Y5MZFE1M3PP3W0WK"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:28:51.600107957Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAGQAHUJBsVClgqm+yr8H+Qsxc",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "/kLMXA==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 25
+          },
+          "f_port": 7,
+          "frm_payload": "UJBsVClgqm+yr8E=",
+          "full_f_cnt": 25
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK2BR1SPKR5P49SB97YNSSX",
+        "ns:transmission:01JZK2BR8GHG0BE6SPN7KF6G8T",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:60783683-f0d5-40d1-8533-677891e09540"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2BR1SPKR5P49SB97YNSSX",
+      "ns:transmission:01JZK2BR8GHG0BE6SPN7KF6G8T",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:60783683-f0d5-40d1-8533-677891e09540"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK2BR8GXG0PEQNYHTGC8HW4"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:28:51.387946644Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkEAQAKAAAAAAA=",
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "fire"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK2BR1SPKR5P49SB97YNSSX",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:60783683-f0d5-40d1-8533-677891e09540"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2BR1SPKR5P49SB97YNSSX",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:60783683-f0d5-40d1-8533-677891e09540"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK2BR1VQHTNS0D1ABP1816P"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:27:24.667787606Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAGAAHkkTSYQ==",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "kkTSYQ==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 24
+          },
+          "f_port": 7,
+          "full_f_cnt": 24
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK2935819RE9KJFTSFCTY8S",
+        "ns:transmission:01JZK293BV6M8NEWERNJKZG1J4",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:9da7d5d9-4776-4342-ad8a-59ab0607fc67"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2935819RE9KJFTSFCTY8S",
+      "ns:transmission:01JZK293BV6M8NEWERNJKZG1J4",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:9da7d5d9-4776-4342-ad8a-59ab0607fc67"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK293BVRG1H21W14EFNXB27"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:27:24.458296269Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "burglar"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK2935819RE9KJFTSFCTY8S",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:9da7d5d9-4776-4342-ad8a-59ab0607fc67"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK2935819RE9KJFTSFCTY8S",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:9da7d5d9-4776-4342-ad8a-59ab0607fc67"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK2935ADDNRJGB4PPZD525N"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:26:43.237389891Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAFwAHHszfyw==",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "Hszfyw==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 23
+          },
+          "f_port": 7,
+          "full_f_cnt": 23
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK27TPH18WR7J1379HTM83N",
+        "ns:transmission:01JZK27TX5FR1THHKFWDX2WAD3",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:71323cf1-0a2e-457e-9f4a-c456789630f7"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK27TPH18WR7J1379HTM83N",
+      "ns:transmission:01JZK27TX5FR1THHKFWDX2WAD3",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:71323cf1-0a2e-457e-9f4a-c456789630f7"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK27TX5AW0N3V7KF2RXNQT1"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:26:43.028091055Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 30,
+        "strobe_mode": "blink",
+        "warning_mode": "emergency"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK27TPH18WR7J1379HTM83N",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:71323cf1-0a2e-457e-9f4a-c456789630f7"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK27TPH18WR7J1379HTM83N",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:71323cf1-0a2e-457e-9f4a-c456789630f7"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK27TPMGMNJY0FNHYXNNSDE"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:25:32.655382929Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAFgAHDDf6JeXhGPVLW6Yqw7jD",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "KsO4ww==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 22
+          },
+          "f_port": 7,
+          "frm_payload": "DDf6JeXhGPVLW6Y=",
+          "full_f_cnt": 22
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK25NRWSZVXQW73TEPHMPDW",
+        "ns:transmission:01JZK25NZFX70FD4R1XMCX8PJY",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8b1cd219-7721-4b7e-8332-2a93cdbb5b4f"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK25NRWSZVXQW73TEPHMPDW",
+      "ns:transmission:01JZK25NZFX70FD4R1XMCX8PJY",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8b1cd219-7721-4b7e-8332-2a93cdbb5b4f"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK25NZFB0VHKBMY9YQ5T9D5"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:25:32.446960043Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "frm_payload": "kGkDAAAABQAAAAA=",
+      "correlation_ids": [
+        "as:downlink:01JZK25NRWSZVXQW73TEPHMPDW",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8b1cd219-7721-4b7e-8332-2a93cdbb5b4f"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK25NRWSZVXQW73TEPHMPDW",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:8b1cd219-7721-4b7e-8332-2a93cdbb5b4f"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK25NRY4TDW4C2C9G2W00BY"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:24:49.577506591Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAFQAHd6LRsg==",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "d6LRsg==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 21
+          },
+          "f_port": 7,
+          "full_f_cnt": 21
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK24BPNTS72DCQ6GNY9KD1E",
+        "ns:transmission:01JZK24BX98HN328449XBVJ8QK",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3052acda-9deb-4e65-922c-5cb32c75a9a8"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK24BPNTS72DCQ6GNY9KD1E",
+      "ns:transmission:01JZK24BX98HN328449XBVJ8QK",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3052acda-9deb-4e65-922c-5cb32c75a9a8"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK24BX929SS7GSAF6ZKF9QD"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:24:49.367387705Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 30,
+        "strobe_mode": "blink",
+        "warning_mode": "emergency"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK24BPNTS72DCQ6GNY9KD1E",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3052acda-9deb-4e65-922c-5cb32c75a9a8"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK24BPNTS72DCQ6GNY9KD1E",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:3052acda-9deb-4e65-922c-5cb32c75a9a8"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK24BPQ3CEKAYYSWNSAV4YD"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:24:21.324556402Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAFAAH3lHsJQ==",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "3lHsJQ==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 20
+          },
+          "f_port": 7,
+          "full_f_cnt": 20
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK23G3N50KFYWJ443WSX4TK",
+        "ns:transmission:01JZK23GAC88BCX7TWDZ2KR8BB",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6141c506-6532-4c80-a563-7ff607708775"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK23G3N50KFYWJ443WSX4TK",
+      "ns:transmission:01JZK23GAC88BCX7TWDZ2KR8BB",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6141c506-6532-4c80-a563-7ff607708775"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK23GACCZZ4H1FNBWA08B8X"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:24:21.111468469Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "fire"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK23G3N50KFYWJ443WSX4TK",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6141c506-6532-4c80-a563-7ff607708775"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK23G3N50KFYWJ443WSX4TK",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:6141c506-6532-4c80-a563-7ff607708775"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK23G3QXG7KT84N9T82HPC0"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:23:26.817660319Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAEwAHbILD5A==",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "bILD5A==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 19
+          },
+          "f_port": 7,
+          "full_f_cnt": 19
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK21TWEWJ2V3CD3DX8TDMWM",
+        "ns:transmission:01JZK21V31XKT471N8CD11DCCW",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:2f0a4de8-7f64-4f1c-a258-092c3db2aa4e"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK21TWEWJ2V3CD3DX8TDMWM",
+      "ns:transmission:01JZK21V31XKT471N8CD11DCCW",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:2f0a4de8-7f64-4f1c-a258-092c3db2aa4e"
+    ],
+    "origin": "ip-10-22-14-64.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK21V31NK0F0EG56GMT7YYA"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:23:26.609062985Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 7,
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "fire"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK21TWEWJ2V3CD3DX8TDMWM",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:2f0a4de8-7f64-4f1c-a258-092c3db2aa4e"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK21TWEWJ2V3CD3DX8TDMWM",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:2f0a4de8-7f64-4f1c-a258-092c3db2aa4e"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK21TWH65P9B3KMTDBQ9WRC"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:22:56.079983374Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.DownlinkMessage",
+      "raw_payload": "YDxI/SeAEgABaC6dDA==",
+      "payload": {
+        "m_hdr": {
+          "m_type": "UNCONFIRMED_DOWN"
+        },
+        "mic": "aC6dDA==",
+        "mac_payload": {
+          "f_hdr": {
+            "dev_addr": "27FD483C",
+            "f_ctrl": {
+              "adr": true
+            },
+            "f_cnt": 18
+          },
+          "f_port": 1,
+          "full_f_cnt": 18
+        }
+      },
+      "request": {
+        "class": "CLASS_C",
+        "downlink_paths": [
+          {
+            "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEO+j9cUEGgwI64qvwwYQtaiIxgMgmJugnMKR+gMqDAjriq/DBhCA9vuwAw=="
+          }
+        ],
+        "rx2_data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "rx2_frequency": "923300000",
+        "frequency_plan_id": "US_902_928_FSB_2"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK20WVYAPV0HSCA2ZCCV0XM",
+        "ns:transmission:01JZK20X2FV4B4242C8JBQ5S7X",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:cfa67de1-26cd-4318-b532-78520683a229"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK20WVYAPV0HSCA2ZCCV0XM",
+      "ns:transmission:01JZK20X2FV4B4242C8JBQ5S7X",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:cfa67de1-26cd-4318-b532-78520683a229"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK20X2FD6B8ABGCBVHT4E5W"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:22:55.872489736Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483B"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationDownlink",
+      "f_port": 1,
+      "decoded_payload": {
+        "command": "start_warning",
+        "duration": 10,
+        "strobe_mode": "chase",
+        "warning_mode": "fire"
+      },
+      "correlation_ids": [
+        "as:downlink:01JZK20WVYAPV0HSCA2ZCCV0XM",
+        "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:cfa67de1-26cd-4318-b532-78520683a229"
+      ]
+    },
+    "correlation_ids": [
+      "as:downlink:01JZK20WVYAPV0HSCA2ZCCV0XM",
+      "rpc:/ttn.lorawan.v3.AppAs/DownlinkQueueReplace:cfa67de1-26cd-4318-b532-78520683a229"
+    ],
+    "origin": "ip-10-22-6-62.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "authentication": {
+      "type": "Bearer",
+      "token_type": "AccessToken",
+      "token_id": "J6J3FJN7RLVW7W22GCZ3IG6TKYD63Q37Z7RJNIQ"
+    },
+    "remote_ip": "99.189.75.121",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "unique_id": "01JZK20WW05PRVTBSQ9MKC4PBQ"
+  },
+  {
+    "name": "as.up.join.forward",
+    "time": "2025-07-07T18:22:17.117583042Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD4833"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+      "end_device_ids": {
+        "device_id": "netvox-r602a-siren",
+        "application_ids": {
+          "application_id": "fms-demo-smart-office"
+        },
+        "dev_eui": "00137A10000445CB",
+        "join_eui": "00137A0000000091",
+        "dev_addr": "27FD4833"
+      },
+      "correlation_ids": [
+        "gs:uplink:01JZK1ZN82FJYRWBK5P3HC4T2E"
+      ],
+      "received_at": "2025-07-07T18:22:17.110466888Z",
+      "join_accept": {
+        "session_key_id": "AZfmH9UKwaXPVj72Dru1WQ==",
+        "received_at": "2025-07-07T18:22:15.299179080Z"
+      }
+    },
+    "correlation_ids": [
+      "gs:uplink:01JZK1ZN82FJYRWBK5P3HC4T2E"
+    ],
+    "origin": "ip-10-22-13-225.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK1ZQ0XMNBGGFNKHC3XJADN"
+  },
+  {
+    "name": "ns.up.join.process",
+    "time": "2025-07-07T18:22:15.502578364Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD483C"
+        }
+      }
+    ],
+    "data": {
+      "@type": "type.googleapis.com/ttn.lorawan.v3.UplinkMessage",
+      "raw_payload": "AJEAAAAAehMAy0UEABB6EwD/q+V2PX4=",
+      "payload": {
+        "m_hdr": {},
+        "mic": "5XY9fg==",
+        "join_request_payload": {
+          "join_eui": "00137A0000000091",
+          "dev_eui": "00137A10000445CB",
+          "dev_nonce": "ABFF"
+        }
+      },
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 500000,
+            "spreading_factor": 8,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "904600000",
+        "timestamp": 3219822309,
+        "time": "2025-07-07T18:22:15.268Z"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "fms-iot-things",
+            "eui": "24E124FFFEF2F8C3"
+          },
+          "time": "2025-07-07T18:22:15.268Z",
+          "timestamp": 3219822309,
+          "rssi": -78,
+          "channel_rssi": -78,
+          "snr": 8.5,
+          "frequency_offset": "5004",
+          "location": {
+            "latitude": 30.2263929475762,
+            "longitude": -97.7599310874939,
+            "altitude": 187,
+            "source": "SOURCE_REGISTRY"
+          },
+          "uplink_token": "ChwKGgoOZm1zLWlvdC10aGluZ3MSCCThJP/+8vjDEOWtqv8LGgwI16CwwwYQztKtjgEgiN314tq//gMqCwjXoLDDBhCAtuV/",
+          "channel_index": 8,
+          "gps_time": "2025-07-07T18:22:15.268Z",
+          "received_at": "2025-07-07T18:22:15.274436900Z"
+        }
+      ],
+      "received_at": "2025-07-07T18:22:15.299179080Z",
+      "correlation_ids": [
+        "gs:uplink:01JZK1ZN82FJYRWBK5P3HC4T2E"
+      ],
+      "device_channel_index": 65,
+      "consumed_airtime": "0.028288s"
+    },
+    "correlation_ids": [
+      "gs:uplink:01JZK1ZN82FJYRWBK5P3HC4T2E"
+    ],
+    "origin": "ip-10-22-6-213.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK1ZNEEHK593VW1FF9Q1DE0"
+  },
+  {
+    "name": "js.join.accept",
+    "time": "2025-07-07T18:22:15.309626208Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          },
+          "dev_eui": "00137A10000445CB",
+          "join_eui": "00137A0000000091",
+          "dev_addr": "27FD4833"
+        }
+      }
+    ],
+    "origin": "ip-10-22-6-158.us-west-1.compute.internal",
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK1ZN8DX0E150J864ZDRPBM"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:08:47.705263670Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK170JSG0H1AWRXTD4HD832"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:08:47.491274168Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK170C37QCSCHV8C7N22RYS"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:08:30.117930189Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK16FD50NBXTF4HTJAAVENT"
+  },
+  {
+    "name": "as.down.data.receive",
+    "time": "2025-07-07T18:08:29.908350442Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK16F6MTG8VY81GJS9WX7TV"
+  },
+  {
+    "name": "ns.down.transmission.fail",
+    "time": "2025-07-07T18:08:21.745486995Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK1677HGXS8JRY5QF65G726"
+  },
+  {
+    "name": "ns.down.data.schedule.attempt",
+    "time": "2025-07-07T18:08:21.697061030Z",
+    "identifiers": [
+      {
+        "device_ids": {
+          "device_id": "netvox-r602a-siren",
+          "application_ids": {
+            "application_id": "fms-demo-smart-office"
+          }
+        }
+      }
+    ],
+    "context": {
+      "tenant-id": "CgtmbXNpb3RjbG91ZA=="
+    },
+    "visibility": {
+      "rights": [
+        "RIGHT_APPLICATION_TRAFFIC_READ"
+      ]
+    },
+    "unique_id": "01JZK16761E1BXNXHYT4N14R5K"
+  }
+]
