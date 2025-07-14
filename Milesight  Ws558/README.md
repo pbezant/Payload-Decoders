@@ -20,12 +20,21 @@ The most compatible and recommended way is to wrap all commands in a `commands` 
 }
 ```
 
+##### Duration Command (NEW!)
+```json
+{
+  "commands": [
+    { "relay": 1, "state": "on", "duration": 300 }
+  ]
+}
+```
+
 ##### Multiple Relays (Array)
 ```json
 {
   "commands": [
     { "relay": 1, "state": "on" },
-    { "relay": 2, "state": "off" }
+    { "relay": 2, "state": "off", "duration": 5 }
   ]
 }
 ```
@@ -123,11 +132,22 @@ or
   }
   ```
 
+#### Duration Command Examples
+```json
+{
+  "commands": [
+    { "relay": 1, "state": "on", "duration": 60 },      // Turn relay 1 on for 1 minute
+    { "relay": 2, "state": "off", "duration": 300 },    // Turn relay 2 off for 5 minutes
+    { "relay": 3, "state": "on", "duration": 3600 }     // Turn relay 3 on for 1 hour
+  ]
+}
+```
+
 #### Mixing Relay and Utility Commands
 ```json
 {
   "commands": [
-    { "relay": 1, "state": "on" },
+    { "relay": 1, "state": "on", "duration": 120 },
     { "type": "all_off" },
     { "type": "set_interval", "value": 600 }
   ]
@@ -136,10 +156,12 @@ or
 
 ### Command Nuances
 - **Format Flexibility:** The encoder supports multiple input formats, but the `"commands"` array is most compatible with TTN integrations.
-- **Immediate commands only:** Duration/delay is not supported. Each command turns a relay on or off immediately.
+- **Duration Support:** NEW! You can now specify a `"duration"` parameter (1-65535 seconds) for timed relay operations.
+- **Immediate vs Duration:** Commands without `"duration"` execute immediately. Commands with `"duration"` run for the specified time.
 - **Relay numbers:** 1–8 only.
 - **State:** Must be "on" or "off" (case-insensitive).
-- **Invalid input:** The encoder will throw errors for bad formats, relay numbers, or states.
+- **Duration range:** 1-65535 seconds (about 18 hours maximum).
+- **Invalid input:** The encoder will throw errors for bad formats, relay numbers, states, or durations.
 - **fPort:** Downlinks use `fPort: 85` by default.
 
 ---

@@ -221,6 +221,129 @@ function bytesToHex(bytes) {
     .join('');
 }
 
+// TTN v3 requires this for downlink decoding 
+function decodeDownlink(input) {
+  const bytes = input.bytes;
+  const fPort = input.fPort;
+  
+  let decoded = {
+    fPort: fPort,
+    raw_payload: bytesToHex(bytes)
+  };
+  
+  try {
+    if (fPort === 7 && bytes.length >= 2) {
+      // Downlink command format
+      const cmdId = bytes[0];
+      const deviceType = bytes[1];
+      
+      if (deviceType !== 0x69) {
+        throw new Error(`Invalid device type: 0x${deviceType.toString(16).toUpperCase()}, expected 0x69`);
+      }
+      
+      decoded.command_id = cmdId;
+      decoded.command_id_hex = `0x${cmdId.toString(16).toUpperCase().padStart(2, '0')}`;
+      decoded.device_type = deviceType;
+      decoded.device_type_hex = `0x${deviceType.toString(16).toUpperCase()}`;
+      decoded.device_model = "R602A";
+      
+      switch (cmdId) {
+        case 0x90: // StartWarning command
+          if (bytes.length >= 6) {
+            const warningMode = bytes[2];
+            const strobeMode = bytes[3];
+            const duration = (bytes[4] << 8) | bytes[5];
+            
+            decoded.command = "start_warning";
+            decoded.warning_mode = getWarningModeFromCode(warningMode);
+            decoded.warning_mode_code = warningMode;
+            decoded.strobe_mode = getStrobeModeFromCode(strobeMode);
+            decoded.strobe_mode_code = strobeMode;
+            decoded.duration = duration;
+            
+            if (bytes.length > 6) {
+              decoded.reserved_bytes = bytesToHex(bytes.slice(6));
+            }
+          } else {
+            decoded.error = "Invalid StartWarning command length";
+          }
+          break;
+          
+        case 0x91: // StopWarning command
+          decoded.command = "stop_warning";
+          if (bytes.length > 2) {
+            decoded.reserved_bytes = bytesToHex(bytes.slice(2));
+          }
+          break;
+          
+        case 0x01: // ConfigReportReq
+          decoded.command = "config_report_request";
+          if (bytes.length > 2) {
+            decoded.payload_data = bytesToHex(bytes.slice(2));
+          }
+          break;
+          
+        case 0x02: // ReadConfigReportReq
+          decoded.command = "read_config_request";
+          if (bytes.length > 2) {
+            decoded.payload_data = bytesToHex(bytes.slice(2));
+          }
+          break;
+          
+        default:
+          decoded.command = "unknown";
+          decoded.message = `Unknown command ID: 0x${cmdId.toString(16).toUpperCase()}`;
+          if (bytes.length > 2) {
+            decoded.payload_data = bytesToHex(bytes.slice(2));
+          }
+      }
+    } else {
+      decoded.error = "Invalid downlink format";
+      decoded.message = `Unsupported fPort or payload length: fPort=${fPort}, length=${bytes.length}`;
+    }
+    
+  } catch (error) {
+    decoded.error = "Decode error";
+    decoded.message = error.message;
+  }
+  
+  return {
+    data: decoded,
+    warnings: [],
+    errors: decoded.error ? [decoded.message] : []
+  };
+}
+
+function getWarningModeFromCode(code) {
+  switch (code) {
+    case 0x00:
+      return "fire";
+    case 0x01:
+      return "emergency";
+    case 0x02:
+      return "burglar";
+    case 0x03:
+      return "doorbell";
+    case 0x04:
+      return "mute";
+    default:
+      return "unknown";
+  }
+}
+
+function getStrobeModeFromCode(code) {
+  switch (code) {
+    case 0x00:
+      return "none";
+    case 0x01:
+      return "chase";
+    case 0x02:
+      return "blink";
+    default:
+      return "unknown";
+  }
+}
+
 // TTN v3 requires this for downlink encoding (optional)
 function encodeDownlink(input) {
   // This function can be used to encode downlink commands

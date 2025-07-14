@@ -7,10 +7,15 @@
  * { "relay": 3, "state": "on" }
  * { "relay": 4, "state": "off"}
  * 
+ * Duration commands (NEW!):
+ * { "relay": 1, "state": "on", "duration": 300 }   // Turn on for 5 minutes
+ * { "relay": 2, "state": "off", "duration": 60 }   // Turn off for 1 minute
+ * Uses utility command format: FF 22 [relay_state] [duration_low] [duration_high]
+ * 
  * Or arrays for multiple relays:
  * [
  *   { "relay": 1, "state": "on" },
- *   { "relay": 2, "state": "off"}
+ *   { "relay": 2, "state": "off", "duration": 120 }
  * ]
  * 
  * Utility commands as JSON:
@@ -132,9 +137,14 @@ function processCommand(cmd) {
     return { error: `Invalid state: ${cmd.state}. Must be "on" or "off"` };
   }
   
-  // Only immediate commands are supported
-  if (cmd.duration) {
-    return { error: 'Duration/delay commands are not supported.' };
+  // Check if duration is specified
+  if (cmd.duration !== undefined) {
+    // Validate duration
+    let duration = parseInt(cmd.duration);
+    if (isNaN(duration) || duration < 1 || duration > 65535) {
+      return { error: `Invalid duration: ${cmd.duration}. Must be 1-65535 seconds` };
+    }
+    return processDurationCommand(relay, state, duration);
   }
   
   return processImmediateCommand(relay, state);
@@ -149,6 +159,22 @@ function processImmediateCommand(relay, state) {
   
   return {
     bytes: [0x08, controlByte, statusByte]
+  };
+}
+
+function processDurationCommand(relay, state, duration) {
+  // Create delay task command per WS558 user guide
+  // Format: FF 32 00 [delay_low] [delay_high] [control_byte] [status_byte]
+  // control_byte: 1 << (relay-1)
+  // status_byte: 1 << (relay-1) if ON, 0 if OFF
+
+  let controlByte = 1 << (relay - 1);
+  let statusByte = state === 'on' ? (1 << (relay - 1)) : 0;
+  let durationLow = duration & 0xFF;
+  let durationHigh = (duration >> 8) & 0xFF;
+
+  return {
+    bytes: [0xFF, 0x32, 0x00, durationLow, durationHigh, controlByte, statusByte]
   };
 }
 
