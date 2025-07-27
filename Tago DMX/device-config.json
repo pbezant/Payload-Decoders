@@ -1,0 +1,104 @@
+{
+  "project": "DMX Light Control System",
+  "version": "1.0.0",
+  "description": "TagoIO-based DMX light control using Milesight WS101 button",
+  "devices": {
+    "milesight_button": {
+      "name": "Milesight WS101 Button",
+      "tago_device_id": "07341e99-a40d-4315-b799-dc58daf98a44",
+      "ttn_device_id": "fms-dev-button-0712-msws101",
+      "dev_eui": "24E124535D410712",
+      "app_eui": "24E124C0002A0001",
+      "app_key": "5572404C696E6B4C6F52613230313823",
+      "ttn_console": "https://fmsiotcloud.nam1.cloud.thethings.industries/",
+      "type": "button",
+      "payload_decoder": "milesight_ws101_decoder.js"
+    },
+    "dmx_controller": {
+      "name": "DMX Controller",
+      "tago_device_id": "07341e99-a40d-4315-b799-dc58daf98a44",
+      "dev_eui": "24E124535D410712",
+      "app_eui": "24E124C0002A0001",
+      "app_key": "5572404C696E6B4C6F52613230313823",
+      "chirpstack_console": "https://console.meteoscientific.com/",
+      "type": "controller",
+      "payload_codec": "chirpstack_codec.js"
+    }
+  },
+  "button_press_mapping": {
+    "single_press": {
+      "payload": "FF2E01",
+      "status": 1,
+      "command": {
+        "lights": [
+          { "address": 1, "channels": [255, 0, 0, 0] },
+          { "address": 5, "channels": [0, 255, 0, 0] }
+        ]
+      },
+      "description": "Turn on red light at address 1, green light at address 5"
+    },
+    "long_press": {
+      "payload": "FF2E02",
+      "status": 2,
+      "command": {
+        "command": "off"
+      },
+      "description": "Turn off all lights"
+    },
+    "double_press": {
+      "payload": "FF2E03",
+      "status": 3,
+      "command": {
+        "pattern": "rainbow",
+        "cycles": 0
+      },
+      "description": "Start rainbow pattern with infinite cycles"
+    }
+  },
+  "network_config": {
+    "fport": 1,
+    "encoding": "hex",
+    "protocol": "lorawan",
+    "network_type": "ttn",
+    "chirpstack_instance": "https://console.meteoscientific.com/"
+  },
+  "analysis_config": {
+    "dmx_controller_analysis": {
+      "name": "DMX Controller Commands",
+      "runtime": "node",
+      "run_on": "tago",
+      "description": "Sends DMX commands to controller via TTN downlink"
+    },
+    "button_press_handler": {
+      "name": "Button Press Handler",
+      "runtime": "node", 
+      "run_on": "tago",
+      "description": "Detects button press types and routes to appropriate commands"
+    }
+  },
+  "action_config": {
+    "name": "WS101 DMX Light Control",
+    "type": "condition",
+    "trigger": "device_data",
+    "description": "Triggers on WS101 button press events to control DMX lights"
+  },
+  "testing": {
+    "test_commands": [
+      {
+        "name": "Test Single Press",
+        "input": { "button_event": { "status": "short press" } },
+        "expected_output": { "lights": [{ "address": 1, "channels": [255, 0, 0, 0] }, { "address": 5, "channels": [0, 255, 0, 0] }] }
+      },
+      {
+        "name": "Test Double Press", 
+        "input": { "button_event": { "status": "double press" } },
+        "expected_output": { "pattern": "rainbow", "cycles": 0 }
+      },
+      {
+        "name": "Test Long Press",
+        "input": { "button_event": { "status": "long press" } },
+        "expected_output": { "command": "off" }
+      }
+    ]
+  }
+} 

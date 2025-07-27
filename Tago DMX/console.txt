@@ -1,0 +1,29 @@
+[2025-07-18 17:42:17] Analysis finished.
+[2025-07-18 17:42:17] Duration: 1.1s Billed Duration: 2s.
+[2025-07-18 17:42:16] Error in DMX Controller Analysis: TypeError: Cannot read properties of undefined (reading '0')
+    at Analysis.startAnalysis [as analysis] (eval at <anonymous> ([eval]:8:39), <anonymous>:172:34)
+    at Analysis.runOnTagoIO (/analysis_node/node_modules/@tago-io/sdk/lib/modules/Analysis/Analysis.js:81:14)
+    at Analysis.start (/analysis_node/node_modules/@tago-io/sdk/lib/modules/Analysis/Analysis.js:67:18)
+    at new Analysis (/analysis_node/node_modules/@tago-io/sdk/lib/modules/Analysis/Analysis.js:55:18)
+    at eval (eval at <anonymous> ([eval]:8:39), <anonymous>:227:18)
+    at Immediate._onImmediate ([eval]:8:39)
+    at process.processImmediate (node:internal/timers:483:21)
+
+[2025-07-18 17:42:16] <anonymous_script>:223
+    await context.logs.error(`DMX Controller Analysis error: ${error.message}`);
+                       ^
+
+TypeError: Cannot read properties of undefined (reading 'error')
+    at Analysis.startAnalysis [as analysis] (eval at <anonymous> ([eval]:8:39), <anonymous>:223:24)
+    at Analysis.runOnTagoIO (/analysis_node/node_modules/@tago-io/sdk/lib/modules/Analysis/Analysis.js:81:14)
+    at Analysis.start (/analysis_node/node_modules/@tago-io/sdk/lib/modules/Analysis/Analysis.js:67:18)
+    at new Analysis (/analysis_node/node_modules/@tago-io/sdk/lib/modules/Analysis/Analysis.js:55:18)
+    at eval (eval at <anonymous> ([eval]:8:39), <anonymous>:227:18)
+    at Immediate.<anonymous> ([eval]:8:39)
+    at process.processImmediate (node:internal/timers:483:21)
+
+Node.js v20.19.2
+
+[2025-07-18 17:42:16] DMX Controller Analysis started
+
+[2025-07-18 17:42:15] Starting Analysis...
