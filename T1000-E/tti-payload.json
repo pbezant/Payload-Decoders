@@ -1,1 +1,145 @@
-{"end_device_ids":{"device_id":"sencecap-04","application_ids":{"application_id":"fms-demo-smart-office"},"dev_eui":"2CF7F1C064900B5C","join_eui":"43A5E3EB76CD6C80","dev_addr":"27FD4832"},"correlation_ids":["gs:uplink:01K19TB3Z8JFC0HF5K7X3XJYFD"],"received_at":"2025-07-29T00:46:56.181740605Z","uplink_message":{"session_key_id":"AZg5JUuiZpBoE8HViXHUpA==","f_port":5,"f_cnt":8902,"frm_payload":"BwAAgABoiBn3MGAKIyNMqMi0InkZn6N8EMnEYjCm/////////wD1AAA9","decoded_payload":{"err":0,"messages":[[{"measurementId":"4200","measurementValue":[{"eventName":"Press once event.","id":8}],"motionId":0,"timestamp":1753750007000,"type":"Event Status"},{"measurementId":"5001","measurementValue":[{"mac":"30:60:0A:23:23:4C","rssi":"-88"},{"mac":"C8:B4:22:79:19:9F","rssi":"-93"},{"mac":"7C:10:C9:C4:62:30","rssi":"-90"}],"motionId":0,"timestamp":1753750007000,"type":"Wi-Fi Scan"},{"measurementId":"4097","measurementValue":24.5,"motionId":0,"timestamp":1753750007000,"type":"Air Temperature"},{"measurementId":"4199","measurementValue":0,"motionId":0,"timestamp":1753750007000,"type":"Light"},{"measurementId":"3000","measurementValue":61,"motionId":0,"timestamp":1753750007000,"type":"Battery"}]],"payload":"0700008000688819f730600a23234ca8c8b42279199fa37c10c9c46230a6ffffffffffffff00f500003d","valid":true},"rx_metadata":[{"gateway_ids":{"gateway_id":"henkecove","eui":"A84041FFFF205BD4"},"time":"2025-07-29T00:46:55.946666Z","timestamp":1171668635,"rssi":-73,"channel_rssi":-73,"snr":10.8,"uplink_token":"ChcKFQoJaGVua2Vjb3ZlEgioQEH//yBb1BCb/diuBBoMCP+zoMQGELSc1dEDIPiakueMhAo=","channel_index":4,"received_at":"2025-07-29T00:46:55.945209893Z"}],"settings":{"data_rate":{"lora":{"bandwidth":125000,"spreading_factor":7,"coding_rate":"4/5"}},"frequency":"904700000","timestamp":1171668635,"time":"2025-07-29T00:46:55.946666Z"},"received_at":"2025-07-29T00:46:55.977620430Z","confirmed":true,"consumed_airtime":"0.107776s","locations":{"user":{"latitude":30.22635320130866,"longitude":-97.75976437224283,"source":"SOURCE_REGISTRY"}},"version_ids":{"brand_id":"sensecap","model_id":"sensecapt1000-tracker-ab","hardware_version":"1.0","firmware_version":"1.0","band_id":"US_902_928"},"network_ids":{"net_id":"000013","ns_id":"EC656E0000102C53","tenant_id":"fmsiotcloud","cluster_id":"nam1","cluster_address":"nam1.cloud.thethings.industries","tenant_address":"fmsiotcloud.nam1.cloud.thethings.industries"},"last_battery_percentage":{"f_cnt":8847,"value":100,"received_at":"2025-07-28T23:57:02.864141522Z"}}}
+{
+    "end_device_ids": {
+        "device_id": "sencecap-04",
+        "application_ids": {
+            "application_id": "fms-demo-smart-office"
+        },
+        "dev_eui": "2CF7F1C064900B5C",
+        "join_eui": "43A5E3EB76CD6C80",
+        "dev_addr": "27FD4832"
+    },
+    "correlation_ids": [
+        "gs:uplink:01K19X2DWZ4H9TSN63ZQX8XSPN"
+    ],
+    "received_at": "2025-07-29T01:34:37.163629970Z",
+    "uplink_message": {
+        "session_key_id": "AZg5JUuiZpBoE8HViXHUpA==",
+        "f_port": 5,
+        "f_cnt": 8959,
+        "frm_payload": "BwAAQABoiCUkYvrEAnZ2wMi0InkZn7B8EMnEYjC26J+AtF9JrgD6AAA9",
+        "decoded_payload": {
+            "err": 0,
+            "messages": [
+                [
+                    {
+                        "measurementId": "4200",
+                        "measurementValue": [
+                            {
+                                "eventName": "SOS event.",
+                                "id": 7
+                            }
+                        ],
+                        "motionId": 0,
+                        "timestamp": 1753752868000,
+                        "type": "Event Status"
+                    },
+                    {
+                        "measurementId": "5001",
+                        "measurementValue": [
+                            {
+                                "mac": "62:FA:C4:02:76:76",
+                                "rssi": "-64"
+                            },
+                            {
+                                "mac": "C8:B4:22:79:19:9F",
+                                "rssi": "-80"
+                            },
+                            {
+                                "mac": "7C:10:C9:C4:62:30",
+                                "rssi": "-74"
+                            },
+                            {
+                                "mac": "E8:9F:80:B4:5F:49",
+                                "rssi": "-82"
+                            }
+                        ],
+                        "motionId": 0,
+                        "timestamp": 1753752868000,
+                        "type": "Wi-Fi Scan"
+                    },
+                    {
+                        "measurementId": "4097",
+                        "measurementValue": 25,
+                        "motionId": 0,
+                        "timestamp": 1753752868000,
+                        "type": "Air Temperature"
+                    },
+                    {
+                        "measurementId": "4199",
+                        "measurementValue": 0,
+                        "motionId": 0,
+                        "timestamp": 1753752868000,
+                        "type": "Light"
+                    },
+                    {
+                        "measurementId": "3000",
+                        "measurementValue": 61,
+                        "motionId": 0,
+                        "timestamp": 1753752868000,
+                        "type": "Battery"
+                    }
+                ]
+            ],
+            "payload": "07000040006888252462fac4027676c0c8b42279199fb07c10c9c46230b6e89f80b45f49ae00fa00003d",
+            "valid": true
+        },
+        "rx_metadata": [
+            {
+                "gateway_ids": {
+                    "gateway_id": "henkecove",
+                    "eui": "A84041FFFF205BD4"
+                },
+                "time": "2025-07-29T01:34:36.932423Z",
+                "timestamp": 4032665068,
+                "rssi": -81,
+                "channel_rssi": -81,
+                "snr": 10,
+                "uplink_token": "ChcKFQoJaGVua2Vjb3ZlEgioQEH//yBb1BDsq/aCDxoMCKzKoMQGEMyLpskDIODDxuyu1wo=",
+                "channel_index": 6,
+                "received_at": "2025-07-29T01:34:36.927241328Z"
+            }
+        ],
+        "settings": {
+            "data_rate": {
+                "lora": {
+                    "bandwidth": 125000,
+                    "spreading_factor": 7,
+                    "coding_rate": "4/5"
+                }
+            },
+            "frequency": "905100000",
+            "timestamp": 4032665068,
+            "time": "2025-07-29T01:34:36.932423Z"
+        },
+        "received_at": "2025-07-29T01:34:36.959886577Z",
+        "confirmed": true,
+        "consumed_airtime": "0.107776s",
+        "locations": {
+            "user": {
+                "latitude": 30.22635320130866,
+                "longitude": -97.75976437224283,
+                "source": "SOURCE_REGISTRY"
+            }
+        },
+        "version_ids": {
+            "brand_id": "sensecap",
+            "model_id": "sensecapt1000-tracker-ab",
+            "hardware_version": "1.0",
+            "firmware_version": "1.0",
+            "band_id": "US_902_928"
+        },
+        "network_ids": {
+            "net_id": "000013",
+            "ns_id": "EC656E0000102C53",
+            "tenant_id": "fmsiotcloud",
+            "cluster_id": "nam1",
+            "cluster_address": "nam1.cloud.thethings.industries",
+            "tenant_address": "fmsiotcloud.nam1.cloud.thethings.industries"
+        },
+        "last_battery_percentage": {
+            "f_cnt": 8847,
+            "value": 100,
+            "received_at": "2025-07-28T23:57:02.864141522Z"
+        }
+    }
+}

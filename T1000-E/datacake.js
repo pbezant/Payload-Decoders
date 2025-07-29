@@ -190,8 +190,10 @@ function decodeTTIPayload(ttiData) {
                 case "Event Status":
                     // Check if measurementValue is an array
                     if (Array.isArray(message.measurementValue) && message.measurementValue.length > 0) {
-                        var eventId = message.measurementValue[0].id;
-                        var eventName = message.measurementValue[0].eventName;
+                        // Get the LAST event (Big Daddy's requirement)
+                        var lastEventIndex = message.measurementValue.length - 1;
+                        var eventId = message.measurementValue[lastEventIndex].id;
+                        var eventName = message.measurementValue[lastEventIndex].eventName;
                         
                         // Initialize event flags based on T1000 documentation
                         var hasSOSEvent = false;
@@ -212,7 +214,10 @@ function decodeTTIPayload(ttiData) {
                             allEventIds.push(event.id);
                             allEventNames.push(event.eventName);
                             
-                            // Set event flags based on ID (from T1000 documentation)
+                            // Set SOS_EVENT to true for ANY event (Big Daddy's requirement)
+                            hasSOSEvent = true;
+                            
+                            // Set specific event flags based on ID (from T1000 documentation)
                             switch (event.id) {
                                 case 1: hasMotionEvent = true; break;
                                 case 2: hasMotionlessEvent = true; break;
@@ -220,20 +225,20 @@ function decodeTTIPayload(ttiData) {
                                 case 4: hasShockEvent = true; break;
                                 case 5: hasTempEvent = true; break;
                                 case 6: hasLightEvent = true; break;
-                                case 7: hasSOSEvent = true; break;
+                                case 7: break; // Specific SOS event - already handled above
                                 case 8: hasFallEvent = true; break;
                             }
                         }
                         
-                        // Add primary event info
+                        // Add primary event info - EVENT_STATUS should contain the LAST event ID
                         measurements.push({
                             field: "EVENT_STATUS",
-                            value: eventName,  // Event name as string
+                            value: eventId,    // Last event ID as integer (Big Daddy's requirement)
                             timestamp: "auto"
                         });
                         measurements.push({
-                            field: "EVENT_STATUS_ID",
-                            value: eventId,    // Event ID as integer
+                            field: "EVENT_STATUS_NAME",
+                            value: eventName,  // Last event name as string (Big Daddy's requirement)
                             timestamp: "auto"
                         });
                         
@@ -396,12 +401,16 @@ function decodeTTIPayload(ttiData) {
     var existingFields = measurements.map(function(m) { return m.field; });
     
     for (var field in requiredFields) {
-        if (existingFields.indexOf(field) === -1 && requiredFields[field] !== null) {
-            measurements.push({
-                field: field,
-                value: requiredFields[field],
-                timestamp: "auto"
-            });
+        // Only add default values for fields that don't already exist
+        if (existingFields.indexOf(field) === -1) {
+            // For null values, don't add them (they're optional)
+            if (requiredFields[field] !== null) {
+                measurements.push({
+                    field: field,
+                    value: requiredFields[field],
+                    timestamp: "auto"
+                });
+            }
         }
     }
     
@@ -409,17 +418,36 @@ function decodeTTIPayload(ttiData) {
 }
 
 function decodeHexPayload(bytes) {
-    // Check if bytes is a string (base64 encoded hex from Datacake)
+    var hexString;
+    
+    // Check if bytes is a string (base64 encoded from Datacake)
     if (typeof bytes === 'string') {
-        // Convert base64 to hex string
-        var hexString = Buffer.from(bytes, 'base64').toString('hex');
+        // Try to decode base64 to hex - Datacake compatible way
+        try {
+            // Simple base64 to hex conversion without Buffer
+            hexString = base64ToHex(bytes);
+        } catch (e) {
+            // If not base64, assume it's already hex
+            hexString = bytes;
+        }
     } else {
         // Convert bytes array to hex string
-        var hexString = bytesToHex(bytes);
+        hexString = bytesToHex(bytes);
     }
     
     var decoded = unpack(hexString);
     return deserialize(decoded);
+}
+
+// Base64 to hex conversion function (Datacake compatible)
+function base64ToHex(base64) {
+    var raw = atob(base64);
+    var hex = '';
+    for (var i = 0; i < raw.length; i++) {
+        var byte = raw.charCodeAt(i);
+        hex += ('0' + byte.toString(16)).slice(-2);
+    }
+    return hex;
 }
 
 // Helper function to convert bytes to hex
@@ -736,6 +764,10 @@ function getGNSSLocationAndSensor(dataValue) {
     var eventStatus = eventStatusRaw > 127 ? eventStatusRaw - 256 : eventStatusRaw;
     offset += 2;
     
+    // Determine if there's an actual event (Big Daddy's requirement)
+    var hasEvent = eventStatus !== 0;
+    var sosEvent = hasEvent; // Any event triggers SOS_EVENT
+    
     // Add measurements with proper data types
     if (latitude !== null && longitude !== null) {
         measurementArray.push({
@@ -752,7 +784,8 @@ function getGNSSLocationAndSensor(dataValue) {
         { field: 'ALTITUDE', value: altitude, timestamp: 'auto' },
         { field: 'ACCURACY', value: accuracy, timestamp: 'auto' },
         { field: 'MOTION_ID', value: motionId, timestamp: 'auto' },
-        { field: 'EVENT_STATUS', value: eventStatus, timestamp: 'auto' }
+        { field: 'EVENT_STATUS', value: eventStatus, timestamp: 'auto' },
+        { field: 'SOS_EVENT', value: sosEvent, timestamp: 'auto' } // Add SOS_EVENT based on event detection
     );
     
     // Add default values for required fields that might not be in this packet
@@ -764,7 +797,6 @@ function getGNSSLocationAndSensor(dataValue) {
         { field: 'HARDWARE_VERSION', value: 0.0 },
         { field: 'FIRMWARE_VERSION', value: 0.0 },
         { field: 'EVENT_INTERVAL', value: 0 },
-        { field: 'SOS_EVENT', value: false },
         { field: 'LORA_DATARATE', value: "" },
         { field: 'LORA_SNR', value: 0.0 },
         { field: 'LORA_RSSI', value: 0 }
@@ -850,6 +882,11 @@ function getWiFiLocationAndSensor(dataValue) {
     // Wi-Fi Count (1 byte)
     var wifiCount = parseInt(dataValue.substring(offset, offset + 2), 16);
     
+    // Determine if there's an actual event (Big Daddy's requirement)
+    // In hex format, EVENT_STATUS != 0 typically means an event occurred
+    var hasEvent = eventStatus !== 0;
+    var sosEvent = hasEvent; // Any event triggers SOS_EVENT
+    
     // Add measurements with proper data types
     if (latitude !== null && longitude !== null) {
         measurementArray.push({
@@ -867,7 +904,8 @@ function getWiFiLocationAndSensor(dataValue) {
         { field: 'ACCURACY', value: accuracy, timestamp: 'auto' },
         { field: 'MOTION_ID', value: motionId, timestamp: 'auto' },
         { field: 'EVENT_STATUS', value: eventStatus, timestamp: 'auto' },
-        { field: 'WIFI_COUNT', value: wifiCount, timestamp: 'auto' }
+        { field: 'WIFI_COUNT', value: wifiCount, timestamp: 'auto' },
+        { field: 'SOS_EVENT', value: sosEvent, timestamp: 'auto' } // Add SOS_EVENT based on event detection
     );
     
     // Add default values for required fields that might not be in this packet
@@ -879,7 +917,6 @@ function getWiFiLocationAndSensor(dataValue) {
         { field: 'HARDWARE_VERSION', value: 0.0 },
         { field: 'FIRMWARE_VERSION', value: 0.0 },
         { field: 'EVENT_INTERVAL', value: 0 },
-        { field: 'SOS_EVENT', value: false },
         { field: 'LORA_DATARATE', value: "" },
         { field: 'LORA_SNR', value: 0.0 },
         { field: 'LORA_RSSI', value: 0 }
@@ -990,7 +1027,6 @@ function getBluetoothLocationAndSensor(dataValue) {
         { field: 'HARDWARE_VERSION', value: 0.0 },
         { field: 'FIRMWARE_VERSION', value: 0.0 },
         { field: 'EVENT_INTERVAL', value: 0 },
-        { field: 'SOS_EVENT', value: false },
         { field: 'LORA_DATARATE', value: "" },
         { field: 'LORA_SNR', value: 0.0 },
         { field: 'LORA_RSSI', value: 0 }
@@ -1319,7 +1355,6 @@ function getPositioningStatusAndSensor(dataValue) {
         { field: 'HARDWARE_VERSION', value: 0.0 },
         { field: 'FIRMWARE_VERSION', value: 0.0 },
         { field: 'EVENT_INTERVAL', value: 0 },
-        { field: 'SOS_EVENT', value: false },
         { field: 'LORA_DATARATE', value: "" },
         { field: 'LORA_SNR', value: 0.0 },
         { field: 'LORA_RSSI', value: 0 },
