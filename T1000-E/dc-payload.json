@@ -1,0 +1,42 @@
+[
+    {
+        "field": "AIR_TEMPERATURE",
+        "timestamp": "auto",
+        "value": 24
+    },
+    {
+        "field": "LIGHT",
+        "timestamp": "auto",
+        "value": 1
+    },
+    {
+        "field": "BATTERY",
+        "timestamp": "auto",
+        "value": 61
+    },
+    {
+        "field": "ALTITUDE",
+        "timestamp": "auto",
+        "value": 35
+    },
+    {
+        "field": "ACCURACY",
+        "timestamp": "auto",
+        "value": 76
+    },
+    {
+        "field": "MOTION_ID",
+        "timestamp": "auto",
+        "value": 101
+    },
+    {
+        "field": "EVENT_STATUS",
+        "timestamp": "auto",
+        "value": 3
+    },
+    {
+        "field": "WIFI_COUNT",
+        "timestamp": "auto",
+        "value": 195
+    }
+]
